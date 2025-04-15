@@ -15,6 +15,7 @@ public class Registration implements IRegistration {
         this.teacherList = teacherList;
     }
 
+
     @Override
     public void enroll(String studentId, String courseId) {
 
@@ -22,7 +23,28 @@ public class Registration implements IRegistration {
 
     @Override
     public void assing(String teacherId, String courseId) {
+        Teacher teacher = null;
+        for (Teacher teac : this.teacherList) {
+            if (teac.getTeacherId().equals(teacherId)) {
+                teacher = teac;
+                break;
+            }
+        }
 
+        Course course = null;
+        for (Course cour : this.courseList) {
+            if (cour.getCourseId().equals(courseId)) {
+                course = cour;
+                break;
+            }
+        }
+
+        if (teacher != null && course != null) {
+            course.setTeacher(teacher);
+            System.out.println("Teacher with ID " + teacherId + " assigned to course with ID " + courseId + ".");
+        } else {
+            System.out.println("The teacher could not be assigned to the course.");
+        }
     }
 
     @Override

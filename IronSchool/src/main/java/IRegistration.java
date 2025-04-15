@@ -1,5 +1,3 @@
-import java.util.List;
-
 public interface IRegistration {
     void enroll(String studentId, String courseId);
 
