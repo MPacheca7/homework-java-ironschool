@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+// datos y comandos
+
 public class Registration implements IRegistration {
 
     private List<Student> studentList = new ArrayList<>();
@@ -57,4 +59,6 @@ public class Registration implements IRegistration {
     public double showProfit() {
         return 0;
     }
+
+
 }
