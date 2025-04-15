@@ -6,7 +6,7 @@ public class Teacher {
     private double salary;
 
     public Teacher(double salary, String name) {
-        this.teacherId = UUID.randomUUID().toString();
+        this.teacherId = UUID.randomUUID().toString().substring(0,4);
         this.salary = salary;
         this.name = name;
     }

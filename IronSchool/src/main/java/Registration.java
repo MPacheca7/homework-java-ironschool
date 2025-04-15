@@ -9,6 +9,9 @@ public class Registration implements IRegistration {
     private List<Course> courseList= new ArrayList<>();
     private List<Teacher> teacherList= new ArrayList<>();
 
+    public Registration(){
+    }
+
     public Registration(List<Student> studentList, List<Course> courseList, List<Teacher> teacherList) {
         this.studentList = studentList;
         this.courseList = courseList;
@@ -60,5 +63,15 @@ public class Registration implements IRegistration {
         return 0;
     }
 
+    public void addTeacher(Teacher teacher) {
+        this.teacherList.add(teacher);
+    }
 
+    public void addCourse(Course course){
+        this.courseList.add(course);
+    }
+
+    public void addStudent(Student student) {
+        this.studentList.add(student);
+    }
 }

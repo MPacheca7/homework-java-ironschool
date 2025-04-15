@@ -1,7 +1,7 @@
 import java.util.UUID;
 
 public class Course {
-    private String courseId = UUID.randomUUID().toString();
+    private String courseId = UUID.randomUUID().toString().substring(0,4);
     private String name;
     private double price;
     private double moneyEarned;
