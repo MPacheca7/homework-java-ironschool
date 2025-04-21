@@ -88,7 +88,9 @@ public class Registration implements IRegistration {
 
     @Override
     public void showStudents() {
-
+        for(Student student: studentList){
+            System.out.println(student);
+        }
     }
 
     @Override
