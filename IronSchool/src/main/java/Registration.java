@@ -76,7 +76,9 @@ public class Registration implements IRegistration {
 
     @Override
     public void showCourses() {
-
+        for(Course course: courseList){
+            System.out.println(course);
+        }
     }
 
     @Override
@@ -112,12 +114,23 @@ public class Registration implements IRegistration {
 
     @Override
     public void showTeachers() {
-
+        for(Teacher teacher: teacherList) {
+            System.out.println(teacher);
+        }
     }
 
     @Override
     public void lookupTeacher(String teacherId) {
+        if(teacherId == null) {
+            throw new IllegalArgumentException("teacherId no puede ser null");
+        }
 
+        for(Teacher teacher: teacherList){
+            if(teacher.getTeacherId().equals(teacherId)){
+                System.out.println(teacher);
+                break;
+            }
+        }
     }
 
     @Override
