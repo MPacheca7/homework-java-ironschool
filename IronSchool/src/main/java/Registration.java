@@ -145,8 +145,17 @@ public class Registration implements IRegistration {
     }
 
     @Override
-    public double showProfit() {
-        return 0;
+    public void showProfit() {
+        double totalMoneyEarned = 0;
+        for(Course coursePrice: courseList){
+            totalMoneyEarned += coursePrice.getMoneyEarned();
+        }
+        double totalTeacherSalary = 0;
+        for(Teacher teacher: teacherList){
+            totalTeacherSalary += teacher.getSalary();
+        }
+        System.out.println("Total Money Earned: " + totalMoneyEarned);
+        System.out.println("Total Teacher Salary: " + totalTeacherSalary);
     }
 
     public void addTeacher(Teacher teacher) {

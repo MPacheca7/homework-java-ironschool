@@ -15,5 +15,5 @@ public interface IRegistration {
 
     void lookupTeacher(String teacherId);
 
-    double showProfit();
+    void showProfit();
 }
