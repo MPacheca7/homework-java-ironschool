@@ -83,6 +83,17 @@ public class Registration implements IRegistration {
 
     @Override
     public void lookupCourse(String courseId) {
+        for (Course course : this.courseList) {
+            if (course.getCourseId().equals(courseId)) {
+                System.out.println("Course with ID " + courseId + " found.");
+                System.out.println("Course Name " + course.getName());
+                System.out.println("Course Teacher " + course.getTeacher().getTeacherId());
+                System.out.println("Course Price " + course.getPrice());
+            } else {
+                System.out.println("Course not found.");
+            }
+            return;
+        }
 
     }
 
