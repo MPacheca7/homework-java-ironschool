@@ -83,16 +83,15 @@ public class Registration implements IRegistration {
 
     @Override
     public void lookupCourse(String courseId) {
-        for (Course course : this.courseList) {
-            if (course.getCourseId().equals(courseId)) {
-                System.out.println("Course with ID " + courseId + " found.");
-                System.out.println("Course Name " + course.getName());
-                System.out.println("Course Teacher " + course.getTeacher().getTeacherId());
-                System.out.println("Course Price " + course.getPrice());
-            } else {
-                System.out.println("Course not found.");
+        if(courseId == null) {
+            throw new IllegalArgumentException("CourseId no puede ser null");
+        }
+
+        for(Course course: courseList){
+            if(course.getCourseId().equals(courseId)){
+                System.out.println(course);
+                break;
             }
-            return;
         }
 
     }
@@ -106,23 +105,16 @@ public class Registration implements IRegistration {
 
     @Override
     public void lookupStudent(String studentId) {
-        for (Student student : this.studentList) {
-            if (student.getStudentId().equals(studentId)) {
-                System.out.println("Student found.");
-                System.out.println("Student with ID " + studentId + " found.");
-                System.out.println("Student Name: " + student.getName());
-                System.out.println("Student Email: " + student.getEmail());
-                System.out.println("Student Course: " + student.getCourse());
-                if (student.getCourse() != null) {
-                    System.out.println("Course found.");
-                    System.out.println("Course with ID " + student.getCourse().getCourseId());
-                } else {
-                    System.out.println("Course not found.");
-                }
-                return;
+        if(studentId == null) {
+            throw new IllegalArgumentException("StudentId no puede ser null");
+        }
+
+        for(Student student: studentList){
+            if(student.getStudentId().equals(studentId)){
+                System.out.println(student);
+                break;
             }
         }
-        System.out.println("Student not found.");
     }
 
     @Override
