@@ -64,7 +64,23 @@ public class Registration implements IRegistration {
 
     @Override
     public void lookupStudent(String studentId) {
-
+        for (Student student : this.studentList) {
+            if (student.getStudentId().equals(studentId)) {
+                System.out.println("Student found.");
+                System.out.println("Student with ID " + studentId + " found.");
+                System.out.println("Student Name: " + student.getName());
+                System.out.println("Student Email: " + student.getEmail());
+                System.out.println("Student Course: " + student.getCourse());
+                if (student.getCourse() != null) {
+                    System.out.println("Course found.");
+                    System.out.println("Course with ID " + student.getCourse().getCourseId());
+                } else {
+                    System.out.println("Course not found.");
+                }
+                return;
+            }
+        }
+        System.out.println("Student not found.");
     }
 
     @Override

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class RegistrationTest {
     @Test
@@ -23,6 +24,22 @@ class RegistrationTest {
 
         assertEquals(teacher1, course1.getTeacher(), "The teacher could not be assigned to the course");
 
+    }
+
+    @Test
+    public void lookupStudent() {
+        List<Student> studentList = new ArrayList<>();
+        List<Course> courseList = new ArrayList<>();
+        List<Teacher> teacherList = new ArrayList<>();
+
+        Student student1 = new Student("Pedro", "Calle las manzanas", "Pedro@gpedro.com");
+
+        studentList.add(student1);
+
+        Registration registration = new Registration(studentList, courseList, teacherList);
+        registration.lookupStudent(student1.getStudentId());
+
+        assertNotNull(student1,"Student found");
     }
 
 }
