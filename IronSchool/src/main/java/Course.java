@@ -45,6 +45,7 @@ public class Course {
     }
 
     public void setMoneyEarned(double moneyEarned) {
+
         this.moneyEarned = moneyEarned;
     }
 

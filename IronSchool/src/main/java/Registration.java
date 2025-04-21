@@ -15,8 +15,33 @@ public class Registration implements IRegistration {
         this.teacherList = teacherList;
     }
 
+
     @Override
     public void enroll(String studentId, String courseId) {
+        Student student = null;
+        for (Student s : studentList) {
+            if (s.getStudentId().equals(studentId)) {
+                student = s;
+                break;
+            }
+        }
+
+        Course course = null;
+        for (Course c : courseList) {
+            if (c.getCourseId().equals(courseId)) {
+                course = c;
+                break;
+            }
+        }
+
+        if (student == null || course == null) {
+            throw new IllegalArgumentException("Student or Course not found.");
+        }
+
+        student.setCourse(course);
+        double totalMoneyErned = course.getMoneyEarned() + course.getPrice();
+        course.setMoneyEarned(totalMoneyErned);
+        System.out.println("Student enrolled in course.");
 
     }
 
@@ -59,6 +84,5 @@ public class Registration implements IRegistration {
     public double showProfit() {
         return 0;
     }
-
 
 }

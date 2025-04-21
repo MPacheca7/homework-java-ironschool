@@ -12,7 +12,6 @@ public class Student {
         this.name = name;
         this.address = address;
         this.email = email;
-        this.course = null;
     }
 
     public Student(String studentId){
