@@ -54,12 +54,10 @@ public class Registration implements IRegistration {
 
     @Override
     public void showCourses() {
-
     }
 
     @Override
     public void lookupCourse(String courseId) {
-
     }
 
     @Override
